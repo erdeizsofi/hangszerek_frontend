@@ -1,0 +1,29 @@
+<app-layout/>
+<form class="p-2" [formGroup]="regisztracioForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="exampleInputName">Név</label>
+    <input type="text" class="form-control" id="exampleInputName" placeholder="Írja be a felhasználónevét" formControlName="nev">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Írja be az email címét" formControlName="email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Jelszó</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Írja be a jelszót" formControlName="password">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword2">Jelszó megint</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Írja be a jelszót megint" formControlName="passwordAgain">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputAdmin">Admin</label>
+    <input type="checkbox" id="exampleInputAdmin"  formControlName="admin">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Regisztráció</button>
+</form>

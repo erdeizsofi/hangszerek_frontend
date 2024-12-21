@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+  <img [src]="dto.kep_url" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{dto.nev}}</h5>
+    <p class="card-text">{{dto.leiras}}</p>
+    <a [routerLink]="'../hangszer/'+dto.nev" class="btn btn-primary">Tovább</a>
+  </div>
+</div>

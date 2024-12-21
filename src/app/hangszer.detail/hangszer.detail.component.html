@@ -1,0 +1,10 @@
+<app-layout [hangszer_id]="id"/>
+
+<h3>{{nev}}<small class="text-body-secondary">{{tipus}}</small></h3>
+<img [src]="kep_url"/>
+<p class="lead">{{leiras}}</p>
+<div class="d-flex flex-row overflow-auto">
+  @for (elado of eladohangszerek; track $index) {
+    <app-eladohangszer [dto]="elado"/>
+  }
+</div>
