@@ -1,4 +1,6 @@
 <app-layout/>
+<h5 style="margin-top: 1em; margin-bottom: 1em; justify-content: center; display: flex;">Új eladó hangszer</h5>
+<div class="card" style="width: 70%; justify-self: center; padding: 1em;">
 <form class="p-2" [formGroup]="hangszerForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="exampleInputName">Név</label>
@@ -20,5 +22,6 @@
     <input type="text" class="form-control" id="exampleInputImg" placeholder="Adja meg a képhez tartozó url-t" formControlName="kep_url">
   </div>
 
-  <button type="submit" class="btn btn-primary">Mentés</button>
+  <button type="submit" class="btn btn-primary" style="margin-top: 1em">Mentés</button>
 </form>
+</div>

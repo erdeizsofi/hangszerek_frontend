@@ -1,10 +1,21 @@
 <app-layout [hangszer_id]="id"/>
 
-<h3>{{nev}}<small class="text-body-secondary">{{tipus}}</small></h3>
-<img [src]="kep_url"/>
-<p class="lead">{{leiras}}</p>
-<div class="d-flex flex-row overflow-auto">
-  @for (elado of eladohangszerek; track $index) {
-    <app-eladohangszer [dto]="elado"/>
-  }
+<div class="card mb-3" style="padding: 3rem; margin: 2em; padding-top: 1.5rem">
+
+  <div class="card-body">
+    <h5 class="lead" style="font-weight: normal; font-size: 1.7em">{{nev}}</h5>
+    <div class="lead" style="margin-bottom: 1rem">Besorolás: {{tipus}}</div>
+    <img [src]="kep_url" class="card-img-top" style="width: 18rem; margin-bottom: 1rem">
+    <p class="lead">{{leiras}}</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 gx-5">
+    @for (elado of eladohangszerek; track $index) {
+      <div class="col">
+        <app-eladohangszer [dto]="elado"/>
+      </div>
+    }
+  </div>
 </div>

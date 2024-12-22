@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {RouterLink} from '@angular/router';
+import {JwtstoreService} from '../jwtstore.service';
+
+
 
 @Component({
   selector: 'app-hangszer',
@@ -13,6 +16,7 @@ import {RouterLink} from '@angular/router';
 })
 export class HangszerComponent {
   @Input({ required: true }) dto!: HangszerDto;
+  constructor(public jwt: JwtstoreService){}
 }
 
 export interface HangszerDto {

@@ -2,7 +2,11 @@
   <img [src]="dto.kep_url" class="card-img-top">
   <div class="card-body">
     <h5 class="card-title">{{dto.nev}}</h5>
-    <p class="card-text">{{dto.leiras}}</p>
     <a [routerLink]="'../hangszer/'+dto.nev" class="btn btn-primary">Tovább</a>
+    @if (jwt.token.length > 0) {
+      <button class="btn btn-danger" style="margin-left: 1em;" onclick="deleteHangszer()">Törlés</button>
+    }
+
   </div>
 </div>
+

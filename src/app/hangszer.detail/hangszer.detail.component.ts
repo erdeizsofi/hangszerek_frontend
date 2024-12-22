@@ -20,26 +20,20 @@ export class HangszerDetailComponent implements OnInit {
   leiras: string="";
 
   eladohangszerek: EladoHangszerDto[] = [
-    {
-      id: 0,
-      tulaj_id: 0,
-      hangszer_id: 0,
-      ar: 45000,
-      leiras: "jo allapotu trevor C fuvola",
-      kep_url: "https://www.zenebutikgyor.hu/kep.php?h&id=9374"
-    },
-    {
-      id: 1,
-      tulaj_id: 0,
-      hangszer_id: 1,
-      ar: 53000,
-      leiras: "jo allapotu yamaha tanulo fuvola",
-      kep_url: "https://hangszertar.com/2418-product_default/viento-fuvola-fl-108.jpg"
-    }
 
   ]
 
   constructor(private route: ActivatedRoute, private jwt: JwtstoreService, private http: HttpClient) {
+  }
+
+
+  deleteHangszer() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.http.delete(`http://localhost:8080/api/deletehangszer?id=${id}`, {
+      headers: {
+        ["Authorization"]: "Bearer " + this.jwt.token,
+      }
+    })
   }
 
   ngOnInit() {
